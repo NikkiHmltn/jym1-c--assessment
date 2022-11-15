@@ -2,3 +2,8 @@
  
 
 // Note: This information should be included in the degree.h file.
+
+#include<iostream>
+using namespace std;
+
+enum DegreeProgram {SECURITY, NETWORK, SOFTWARE}
