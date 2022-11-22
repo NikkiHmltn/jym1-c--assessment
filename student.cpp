@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include <string>
-#include <vector>
+#include <tuple>
 #include "student.h"
 using namespace std;
 
@@ -47,16 +47,15 @@ string Student::GetDegreeProgram(){
     return degreeProgram;
 };
         
-int Student::GetDaysToComplete() {
-    // for(int i=0; i < 3; ++i){
-    //     daysInCourse[i]
-    // }
-    int arr[3];
-    arr[0] = daysInCourse[0];
-    arr[1] = daysInCourse[1];
-    arr[2] = daysInCourse[2];
+tuple<int, int, int> Student::GetDaysToComplete() {
 
-    return *arr;
+    int* ptr = new int[3];
+    
+    ptr[0] = daysInCourse[0];
+    ptr[1] = daysInCourse[1];
+    ptr[2] = daysInCourse[2];
+
+    return tie(ptr[0], ptr[1], ptr[2]);
 };
 
 // ========= Setter Functions ========= //
@@ -96,11 +95,18 @@ void Student::SetDaysToComplete(int day1, int day2, int day3){
 // ======== Print ======== //
 
 void Student::Print(){
-    cout << "Student ID: " << studentId << endl;
-    cout << "First Name: " << firstName << endl;
-    cout << "Last Name: " << lastName << endl;
-    cout << "Email: " << emailAddress << endl;
-    cout << "Age: " << age << endl;
-    cout << "Days in Courses: " << daysInCourse[3] << endl;
-    cout << "Degree Program: " << degreeProgram << endl;
+
+    cout << "Student ID: " << GetStudentId() << endl;
+    cout << "First Name: " << GetFirstName() << endl;
+    cout << "Last Name: " << GetLastName() << endl;
+    cout << "Email: " << GetEmail() << endl;
+    cout << "Age: " << GetAge() << endl;
+    tuple<int,int,int> result = GetDaysToComplete();
+    cout << "Days in Courses: " << get<0>(result) << " " << get<1>(result) << " " << get<2>(result) << endl;
+    cout << "Degree Program: " << GetDegreeProgram() << endl;
+}
+
+// ======== Destructor ======== //
+Student::~Student(){
+    cout << "Student class destroyed" << endl;
 }
