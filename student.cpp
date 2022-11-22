@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 #include <string>
 #include <tuple>
 #include "student.h"
@@ -95,15 +94,11 @@ void Student::SetDaysToComplete(int day1, int day2, int day3){
 // ======== Print ======== //
 
 void Student::Print(){
-
-    cout << "Student ID: " << GetStudentId() << endl;
-    cout << "First Name: " << GetFirstName() << endl;
-    cout << "Last Name: " << GetLastName() << endl;
-    cout << "Email: " << GetEmail() << endl;
-    cout << "Age: " << GetAge() << endl;
+    // in the provided format: A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security
     tuple<int,int,int> result = GetDaysToComplete();
-    cout << "Days in Courses: " << get<0>(result) << " " << get<1>(result) << " " << get<2>(result) << endl;
-    cout << "Degree Program: " << GetDegreeProgram() << endl;
+
+    cout << GetStudentId() << "  " << "First Name: " << GetFirstName() << "  " << "Last Name: " << GetLastName() << "   " << "Age: " << GetAge() << "   " << "daysInCourse: {" << get<0>(result) << ", " << get<1>(result) << ", " << get<2>(result) << "} Degree Program: " << GetDegreeProgram() << endl;
+
 }
 
 // ======== Destructor ======== //
