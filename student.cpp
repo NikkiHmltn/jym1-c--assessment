@@ -48,9 +48,15 @@ string Student::GetDegreeProgram(){
 };
         
 int Student::GetDaysToComplete() {
+    // for(int i=0; i < 3; ++i){
+    //     daysInCourse[i]
+    // }
+    int arr[3];
+    arr[0] = daysInCourse[0];
+    arr[1] = daysInCourse[1];
+    arr[2] = daysInCourse[2];
 
-    cout << "FIXME: Return the days to course completion array" << endl;
-    return 0;
+    return *arr;
 };
 
 // ========= Setter Functions ========= //
@@ -77,8 +83,15 @@ void Student::SetAge(int newAge){
 
 void Student::SetDegreeProgram(string newDegree){
     degreeProgram = newDegree;
-}
-    // SetDaysToComplete;
+};
+
+void Student::SetDaysToComplete(int day1, int day2, int day3){
+
+    daysInCourse[0] = day1;
+    daysInCourse[1] = day2;
+    daysInCourse[2] = day3;
+
+};
 
 // ======== Print ======== //
 
@@ -88,5 +101,6 @@ void Student::Print(){
     cout << "Last Name: " << lastName << endl;
     cout << "Email: " << emailAddress << endl;
     cout << "Age: " << age << endl;
+    cout << "Days in Courses: " << daysInCourse[3] << endl;
     cout << "Degree Program: " << degreeProgram << endl;
 }

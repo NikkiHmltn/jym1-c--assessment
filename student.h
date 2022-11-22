@@ -32,11 +32,13 @@ class Student {
         void SetEmail(string newEmail);
         void SetAge(int newAge);
         void SetDegreeProgram(string newProgram);
-        // FIXME: add setter for adding says to array
-            // SetDaysToComplete;
+        void SetDaysToComplete(int day1, int day2, int day3);
 
     // Print All Student Info
         void Print();
+
+    // Destructor
+    // ~Student();
 
     private:
         string studentId;
