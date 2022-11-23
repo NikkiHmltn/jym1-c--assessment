@@ -96,7 +96,7 @@ void Student::SetDaysToComplete(int day1, int day2, int day3){
 
 void Student::Print(){
     // in the provided format: A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security
-
+ 
     tuple<int,int,int> result = GetDaysToComplete();
     string degType;
 
@@ -106,9 +106,9 @@ void Student::Print(){
         degType = "NETWORK";
     } else {
         degType = "SOFTWARE";
-    }
+    };
 
-    cout << GetStudentId() << "  " << "First Name: " << GetFirstName() << "  " << "Last Name: " << GetLastName() << "   " << "Age: " << GetAge() << "   " << "daysInCourse: {" << get<0>(result) << ", " << get<1>(result) << ", " << get<2>(result) << "} Degree Program: " << degType << endl;
+    cout << GetStudentId() << "  " << "First Name: " << GetFirstName() << "  " << "Last Name: " << GetLastName() << "   " << "Email: " << GetEmail()<< "    " << "Age: " << GetAge() << "   " << "daysInCourse: {" << get<0>(result) << ", " << get<1>(result) << ", " << get<2>(result) << "} Degree Program: " << degType << endl;
 
 }
 
