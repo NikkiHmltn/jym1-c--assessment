@@ -6,6 +6,10 @@
 // #include "student.h"
 #include "roster.h"
 using namespace std;
+#include <vector>
+#include <sstream>
+#include <string>
+
 
 int main(){
 
@@ -16,13 +20,31 @@ int main(){
     // student1.Print();
     const string studentData[] = {"A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY", "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK", "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE", "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY", "A5,Nicole,Hamilton,nhami67@wgu.edu,28,10,20,5,SOFTWARE"};
 
-    Roster roster;
+    Roster classRoster;
 
     for(int i=0; i < 5; ++i){
-        cout << studentData[i] << endl;
-        // FIXME: maybe spread out the data? Loop through studentData[i]? 
-        roster.add(studentData[i]);
-    }
+        stringstream ss(studentData[i]);
+        vector<string> studentStr;
 
+        while(ss.good()){
+            string subStr;
+            getline(ss, subStr, ',');
+            studentStr.push_back(subStr);
+        }
+
+        DegreeProgram studentDeg;
+        if(studentStr.at(8) == "SECURITY"){
+            studentDeg = SECURITY;
+        } else if(studentStr.at(8) == "NETWORK"){
+            studentDeg = NETWORK;
+        } else if(studentStr.at(8) == "SOFTWARE"){
+            studentDeg = SOFTWARE;
+        };
+
+        classRoster.add(studentStr.at(0), studentStr.at(1), studentStr.at(2), studentStr.at(3), stoi(studentStr.at(4)), stoi(studentStr.at(5)), stoi(studentStr.at(6)), stoi(studentStr.at(7)), studentDeg);
+
+        ss.clear();
+    }    
+        
     return 0;
 };

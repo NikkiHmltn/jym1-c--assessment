@@ -2,24 +2,25 @@
 using namespace std;
 #include <string>
 #include "roster.h"
+#include "degree.h"
 #include "student.h"
 
 
 int rosterArr = 0;
 
 Roster::Roster(){
-    classRosterArray[5];
+    Student* classRosterArray[5] = {nullptr, nullptr, nullptr, nullptr, nullptr};
 };
 
 //  sets the instance variables from student and updates the roster
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram){
-
-    Student studentToAdd(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram);
-
-    cout << studentToAdd << "   " << rosterArr << endl;
-    // classRosterArray[rosterArr] = studentToAdd;
-    // rosterArr++;    
-    // cout << classRosterArray[rosterArr] << " <-- Student, Index --> " << rosterArr << endl;
+    for(int i=0; i < 5; ++i){
+        if(classRosterArray[i] == nullptr){
+            classRosterArray[i] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeprogram);
+            cout << classRosterArray[i] << endl;
+            break;
+        };
+    };
 };
 
 // // that removes students from the roster by student ID. If the student ID does not exist, the function prints an error message indicating that the student was not found

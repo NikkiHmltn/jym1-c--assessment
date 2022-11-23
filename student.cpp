@@ -2,11 +2,12 @@
 #include <string>
 #include <tuple>
 #include "student.h"
+
 using namespace std;
 
 // ========= Student Class Constructors========= //
 
-Student::Student(string kidId, string firstname, string lastname, string email, int studentAge, int day1, int day2, int day3, string program) 
+Student::Student(string kidId, string firstname, string lastname, string email, int studentAge, int day1, int day2, int day3, DegreeProgram program) 
 {
     
     studentId = kidId;
@@ -42,8 +43,8 @@ int Student::GetAge(){
     return age;
 };
 
-string Student::GetDegreeProgram(){
-    return degreeProgram;
+DegreeProgram Student::GetDegreeProgram(){
+    return DegreeProgram();
 };
         
 tuple<int, int, int> Student::GetDaysToComplete() {
@@ -79,7 +80,7 @@ void Student::SetAge(int newAge){
     age = newAge;
 };
 
-void Student::SetDegreeProgram(string newDegree){
+void Student::SetDegreeProgram(DegreeProgram newDegree){
     degreeProgram = newDegree;
 };
 

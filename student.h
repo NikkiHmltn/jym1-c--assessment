@@ -1,12 +1,12 @@
 #ifndef STUDENT_H
 #define STUDENT_H
-
+#include "degree.h"
 using namespace std;
 
 class Student {
     public:
     // Class Constructors 
-        Student(string kidId, string firstname, string lastname, string email, int studentAge, int day1, int day2, int day3, string program);
+        Student(string kidId, string firstname, string lastname, string email, int studentAge, int day1, int day2, int day3, DegreeProgram program);
         
     // Getters
         string GetStudentId();
@@ -14,7 +14,7 @@ class Student {
         string GetLastName();
         string GetEmail();
         int GetAge();
-        string GetDegreeProgram();
+        DegreeProgram GetDegreeProgram();
         tuple<int,int,int> GetDaysToComplete();
 
     // Setters
@@ -23,7 +23,7 @@ class Student {
         void SetLastName(string newLastName);
         void SetEmail(string newEmail);
         void SetAge(int newAge);
-        void SetDegreeProgram(string newProgram);
+        void SetDegreeProgram(DegreeProgram newProgram);
         void SetDaysToComplete(int day1, int day2, int day3);
 
     // Print All Student Info
@@ -39,7 +39,7 @@ class Student {
         string emailAddress;
         int age;
         int daysInCourse[3];
-        string degreeProgram;
+        DegreeProgram degreeProgram;
 };
 
 #endif

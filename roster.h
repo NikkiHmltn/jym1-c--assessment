@@ -1,6 +1,7 @@
 #ifndef ROSTER_H
 #define ROSTER_H
 #include "degree.h"
+#include "student.h"
 
 // ROSTER CLASS
 
@@ -18,7 +19,7 @@ class Roster {
         // void printByDegreeProgram(DegreeProgram degreeProgram);       
                     
     private:
-        int* classRosterArray[5];
+        Student* classRosterArray[5] = {nullptr, nullptr, nullptr, nullptr, nullptr};
 };
 
 
