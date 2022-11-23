@@ -14,7 +14,7 @@ using namespace std;
 int main(){
 
     //Personal Submission Info
-    cout << "C867 Scripting and Programming Applications" << endl << "C++" << endl << "STUDENT ID HERE" << endl << "Nicole Hamilton" << endl;
+    cout << "C867 Scripting and Programming Applications" << endl << "C++" << endl << "010427831" << endl << "Nicole Hamilton" << endl;
     cout << endl;
 
     //All student data from table

@@ -82,13 +82,17 @@ void Roster::printAverageDaysInCourse(string studentID){
 void Roster::printInvalidEmails(){
     for(int i=0; i < 5; ++i){
         if(classRosterArray[i] != nullptr){
-            string studentEml = classRosterArray[i]->GetEmail();
 
-            if(!studentEml.find("@")){
+            string studentEml = classRosterArray[i]->GetEmail();
+            size_t foundAt = studentEml.find("@"); 
+            size_t foundSpace = studentEml.find(" "); 
+            size_t foundDot = studentEml.rfind("."); 
+
+            if(foundAt == string::npos){
                 classRosterArray[i]->Print();
-            } else if (studentEml.find(" ")){
+            } else if (foundSpace != string::npos){
                 classRosterArray[i]->Print();
-            } else if (!studentEml.find(".")){
+            } else if (foundDot == string::npos){
                 classRosterArray[i]->Print();
             };
         };  
