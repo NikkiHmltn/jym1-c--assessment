@@ -96,7 +96,8 @@ void Student::SetDaysToComplete(int day1, int day2, int day3){
 
 void Student::Print(){
     // in the provided format: A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security
- 
+    // note: This didn't include 'email' and I wasn't sure if it was on purpose?
+    
     tuple<int,int,int> result = GetDaysToComplete();
     string degType;
 
