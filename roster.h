@@ -16,7 +16,7 @@ class Roster {
         void printAll();
         // void printAverageDaysInCourse(string studentID);
         // void printInvalidEmails();
-        // void printByDegreeProgram(DegreeProgram degreeProgram);       
+        void printByDegreeProgram(DegreeProgram degreeProgram);       
                     
     private:
         Student* classRosterArray[5] = {nullptr, nullptr, nullptr, nullptr, nullptr};

@@ -50,4 +50,10 @@ void Roster::printAll(){
 // Roster::printInvalidEmails();
 
 // // prints out student information for a degree program specified by an enumerated type
-// Roster::printByDegreeProgram(DegreeProgram degreeProgram); 
+void Roster::printByDegreeProgram(DegreeProgram degreeProgram){
+    for(int i=0; i < 5; ++i){
+        if(classRosterArray[i]->GetDegreeProgram() == degreeProgram){
+            classRosterArray[i]->Print();
+        }
+    }
+}; 
