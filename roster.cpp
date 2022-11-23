@@ -17,7 +17,6 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
     for(int i=0; i < 5; ++i){
         if(classRosterArray[i] == nullptr){
             classRosterArray[i] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeprogram);
-            cout << classRosterArray[i] << endl;
             break;
         };
     };
@@ -37,9 +36,12 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 // };
 
 // // that prints a complete tab-separated list of student data
-// Roster::printAll(){
+void Roster::printAll(){
+    for(int i=0; i < 5; ++i){
+        classRosterArray[i]->Print();
+    }
     
-// };
+};
 
 // // that correctly prints a student’s average number of days in the three courses. The student is identified by the studentID parameter
 // Roster::printAverageDaysInCourse(string studentID);
