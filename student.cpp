@@ -101,6 +101,7 @@ void Student::Print(){
     tuple<int,int,int> result = GetDaysToComplete();
     string degType;
 
+    //Return a string instead of the enumerated degree types
     if(GetDegreeProgram() == 1){
         degType = "SECURITY";
     } else if(GetDegreeProgram() == 2){
@@ -109,6 +110,7 @@ void Student::Print(){
         degType = "SOFTWARE";
     };
 
+    //Print all info on the student as per the instructions above
     cout << GetStudentId() << "  " << "First Name: " << GetFirstName() << "  " << "Last Name: " << GetLastName() << "   " << "Email: " << GetEmail()<< "    " << "Age: " << GetAge() << "   " << "daysInCourse: {" << get<0>(result) << ", " << get<1>(result) << ", " << get<2>(result) << "} Degree Program: " << degType << endl;
 
 }

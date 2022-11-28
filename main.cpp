@@ -43,7 +43,7 @@ int main(){
             studentDeg = SOFTWARE;
         };
 
-        //Make the student
+        //Make the student inside the method adding to the Class Roster array
         classRoster.add(studentStr.at(0), studentStr.at(1), studentStr.at(2), studentStr.at(3), stoi(studentStr.at(4)), stoi(studentStr.at(5)), stoi(studentStr.at(6)), stoi(studentStr.at(7)), studentDeg);
 
         //Delete the stream

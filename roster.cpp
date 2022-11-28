@@ -113,5 +113,10 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram){
 // ============ Deconstructor ============== //
 
 Roster::~Roster(){
+    //Loop through Student roster and delete each student before Roster destructor ends
+    for(int i=0; i < 5; ++i) {
+        delete this->classRosterArray[i];
+    };
+
     cout << "Roster class destroyed" << endl;
 };
